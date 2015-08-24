@@ -1,0 +1,1 @@
+f g = g where g x = 2*x

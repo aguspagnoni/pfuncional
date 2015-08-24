@@ -1,0 +1,8 @@
+sort3 a b c  
+    | a < b && b < c = [a, b, c]
+    | a < b = [ sort2 a c !! 0, sort2 b c !! 0, sort2 b c !! 1]
+    | otherwise = [a, c, b]
+
+sort2 a b
+    | a < b = [a, b]
+    | otherwise = [b, a]

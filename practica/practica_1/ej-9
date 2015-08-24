@@ -1,0 +1,13 @@
+{- load ej-1 -}
+
+(!) :: Bool -> Bool
+(!) b
+    | b = False
+    | otherwise = True
+
+isSauronic :: Int -> Bool
+isSauronic x
+    | x > 99 = isSauronic (x - 4)
+isSauronic x 
+    | x < 100 &&  mod x 4 == 0 && (!) (x == 0) = True
+isSauronic x = False

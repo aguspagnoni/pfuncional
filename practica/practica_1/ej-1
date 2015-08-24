@@ -1,0 +1,33 @@
+seven x = 7
+
+sign :: Int -> Int
+sign x  
+    | x > 0 = 1
+    | x < 0 = (-1)
+  	| otherwise = 0
+
+absolute x = sign x * x
+
+
+and' a b
+    | a = b
+    | otherwise = False
+
+or' a b
+    | a = a
+    | otherwise = b
+
+nor' a b
+    | (or' a b) = False
+    | otherwise = True
+
+xor' a b
+    | (and' a b) = False
+    | otherwise = or' a b
+
+dividesTo a b = mod a b == 0
+isMultiple a b = dividesTo b a
+isCommonDivisor a (b,c) = and' (dividesTo b a) (dividesTo c a)
+swap (a,b) = (b,a)
+    
+

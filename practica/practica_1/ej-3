@@ -1,0 +1,4 @@
+sqr x = x*x
+
+power4 x = sqr (sqr x)
+power4' x = (sqr x)*(sqr x)
