@@ -1,0 +1,7 @@
+first (x,y) = x 
+second (x,y) = y
+const x y = x
+compose f g = (\x -> f (g x))
+apply f x = f x
+subst f g x = f x (g x)
+pairFunc (f1,f2) x y = (f1 (f2 x), f2 (f1 y))
