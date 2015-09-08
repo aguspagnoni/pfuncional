@@ -1,0 +1,10 @@
+data ColorPrimario = Rojo | Azul | Amarillo
+data ColorSecundario = Verde | Marron | Naranja deriving (Show)
+
+mezclar :: ColorPrimario -> ColorPrimario -> Maybe ColorSecundario
+mezclar Rojo Azul = Just Marron
+mezclar Rojo Amarillo = Just Naranja
+mezclar Azul Amarillo = Just Verde
+mezclar c1 c2 = Nothing
+
+data Punto = Punto Float Float Float deriving (Show) 

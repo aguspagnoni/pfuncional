@@ -1,1 +1,8 @@
-f g = g where g x = 2*x
+
+{- f g = 2 where g x = 2*x -}
+f g = g 2 + 1
+
+succ x = x + 1
+
+aToBool x = True
+aToa x = x
