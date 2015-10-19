@@ -1,0 +1,5 @@
+second = \y -> \x -> x
+
+andThen :: Bool -> a -> b
+andThen True = \y -> y
+andThen False = \y -> False

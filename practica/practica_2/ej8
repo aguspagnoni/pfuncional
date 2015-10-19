@@ -7,4 +7,35 @@ mezclar Rojo Amarillo = Just Naranja
 mezclar Azul Amarillo = Just Verde
 mezclar c1 c2 = Nothing
 
-data Punto = Punto Float Float Float deriving (Show) 
+data Punto = Punto2D (Float, Float) | Punto3D (Float, Float, Float) deriving (Show)
+{- 
+modulo :: Punto -> Float
+modulo (Punto2D (x, y)) = (x^2 + y^2)^(0.5)
+-}
+ycoord :: Punto -> Float
+ycoord (Punto2D (x, y)) = y 
+ycoord (Punto3D (x, y, z)) = y
+
+xcoord :: Punto -> Float
+xcoord (Punto2D (x, y)) = x 
+xcoord (Punto3D (x, y, z)) = x
+
+suma :: Punto -> Float
+suma (Punto2D (x, y)) = x + y
+suma (Punto3D (x, y, z)) = x + y + z
+
+type Nombre = String
+type Edad = Int
+type Documento = String
+type Direccion = String
+type Telefono = String
+
+data PersonaCompleta = Persona Nombre Edad Documento Direccion Telefono deriving (Show)
+
+nombre :: PersonaCompleta -> String
+nombre (Persona a b c d e) = a
+
+f :: Int -> Char
+f x = 'a'
+g :: Char -> Int
+g 'a' = 2

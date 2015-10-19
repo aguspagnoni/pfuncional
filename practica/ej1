@@ -1,0 +1,17 @@
+nextDiv :: Int -> Int -> Int
+nextDiv x y 
+    | x >= y = -1
+    | y `mod` (x + 1) == 0 = x + 1
+    | otherwise = nextDiv (x+1) y
+
+sumDivs :: Int -> Int
+sumDivs x = aux 0 x
+
+aux :: Int -> Int -> Int
+aux a b
+    | a == b = 0
+    | otherwise = (nextDiv a b) + (aux (nextDiv a b) b)
+
+power :: Float -> Int -> Float
+power f 0 = 1
+power f n = f * power f (n - 1)
