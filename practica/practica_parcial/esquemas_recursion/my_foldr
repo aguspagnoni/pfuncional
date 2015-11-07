@@ -1,0 +1,3 @@
+my_foldr :: (a -> b -> b) -> b -> [a] -> b
+my_foldr f_transf neutro [] = neutro
+my_foldr f_transf neutro (x:xs) = f_transf x (my_foldr f_transf neutro xs)
