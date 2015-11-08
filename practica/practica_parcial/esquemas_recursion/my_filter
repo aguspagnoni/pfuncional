@@ -1,0 +1,5 @@
+my_filter :: (a -> Bool) -> [a] -> [a]
+my_filter stays [] = []
+my_filter stays (x:xs) = if stays x
+                         then x : my_filter stays xs
+                         else my_filter stays xs
