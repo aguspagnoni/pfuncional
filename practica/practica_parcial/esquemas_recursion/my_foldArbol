@@ -1,0 +1,8 @@
+data Arbol a = Hoja a | Nodo a (Arbol a) (Arbol a) deriving Show
+my_foldArbol :: (a -> b) -> (a -> b -> b -> b) -> Arbol a -> b
+my_foldArbol f_hoja f_nodo (Hoja x) = (f_hoja x)
+my_foldArbol f_hoja f_nodo (Nodo x t1 t2) = f_nodo x
+                                                   (my_foldArbol f_hoja f_nodo t1)
+                                                   (my_foldArbol f_hoja f_nodo t2)
+
+

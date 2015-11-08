@@ -1,0 +1,8 @@
+data AB a b = Leaf b | Branch a (AB a b) (AB a b)
+
+bifurcaciones :: AB a b -> Int
+bifurcaciones (Leaf b) = 0
+bifurcaciones (Branch a ab1 ab2) = 1 + bifurcaciones ab1 + bifurcaciones ab2
+
+
+

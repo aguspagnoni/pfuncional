@@ -1,0 +1,4 @@
+data Arbol a = Hoja a | Nodo a (Arbol a) (Arbol a) deriving Show
+my_mapArbol :: (a -> b) -> Arbol a -> Arbol b
+my_mapArbol f (Hoja x) = Hoja (f x)
+my_mapArbol f (Nodo x t1 t2) = Nodo (f x) (my_mapArbol f t1) (my_mapArbol f t2)
